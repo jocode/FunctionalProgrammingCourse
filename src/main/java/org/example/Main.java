@@ -10,10 +10,22 @@ public class Main {
         Operations multiplication = (int a, int b) -> System.out.println("The multiplication is: " + (a * b));
         Operations division = (int a, int b) -> System.out.println("The division is: " + (a / b));
 
-        division.printOperation(5, 3);
+        // division.printOperation(5, 3);
+
+        engine((a, b) -> a + b);
+        engine((a, b) -> a - b);
+        engine((a, b) -> a * b);
+        engine((a, b) -> a / b);
     }
 
     public void myMethod(FunctionTest ft) {
         ft.greeting();
+    }
+
+    public static void engine(Calculator calc) {
+        int a = 5;
+        int b = 3;
+        double result = calc.calculate(a, b);
+        System.out.println("The result is: " + result);
     }
 }
